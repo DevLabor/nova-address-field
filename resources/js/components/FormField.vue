@@ -12,54 +12,43 @@
                 :country="field.countries"
                 v-on:placechanged="getAddressData">
             </vue-google-autocomplete>
-            <div class="flex w-full pt-2">
+            <div class="flex w-full mt-2">
                 <div class="flex w-1/2">
                     <checkbox
                         :checked="field.withMap"
                         @input="toggleMap"
-                        class="py-2 pr-2"
-
                     />
-                    <label @click="toggleMap" class="inline-block text-80 pt-2 leading-tight">Show Map</label>
+                    <label @click="toggleMap" class="inline-block text-80 leading-tight pl-1">{{ __('Show Map') }}</label>
                 </div>
 
                 <div class="flex w-1/2">
                     <checkbox
                         :checked="field.withLatLng"
                         @input="toggleLatLng"
-                        class="py-2 pr-2"
                     />
-                    <label @click="toggleLatLng" class="inline-block text-80 pt-2 leading-tight">Show Coordinations</label>
+                    <label @click="toggleLatLng" class="inline-block text-80 leading-tight pl-1">{{ __('Show Coordinations')}}</label>
                 </div>
             </div>
-            <div v-show="field.withLatLng" class="flex flex-wrap w-full">
-                <div class="flex w-1/2">
-                    <div class="w-1/5 py-3">
-                        <label class="inline-block text-80 pt-2 leading-tight" for="latitude">Lat</label>
-                    </div>
-                    <div class="py-3 pr-2 w-4/5">
+            <div v-show="field.withLatLng" class="flex flex-wrap w-full my-2">
+                <div class="flex w-1/2 pr-1">
+                        <label class="inline-block text-80 pt-2 mr-1 leading-tight" for="latitude">Lat</label>
                         <input id="latitude" type="text"
                                class="w-full form-control form-input form-input-bordered"
                                :class="errorClasses"
-                               placeholder="long"
+                               placeholder="latitude"
                                v-model="addressData.latitude"
                                v-on:change="refreshAddressData"
                         />
-                    </div>
                 </div>
-                <div class="flex w-1/2">
-                    <div class="w-1/5 py-3">
-                        <label class="inline-block text-80 pt-2 leading-tight" for="longitude">Lng</label>
-                    </div>
-                    <div class="py-3 w-4/5">
-                        <input id="longitude" type="text"
+                <div class="flex w-1/2 pl-1">
+                        <label class="inline-block text-80 pt-2 mr-1 leading-tight" for="longitude">Lng</label>
+                        <input d="longitude" type="text"
                                class="w-full form-control form-input form-input-bordered"
                                :class="errorClasses"
-                               placeholder="long"
+                               placeholder="longitude"
                                v-model="addressData.longitude"
                                v-on:change="refreshAddressData"
                         />
-                    </div>
                 </div>
             </div>
 

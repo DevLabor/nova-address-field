@@ -20,6 +20,16 @@ and then add the api key to your `.env` file
 GOOGLE_PLACES_API_KEY=############################
 ```
 
+Publish the config file
+
+```shell
+php artisan vendor:publish --provider="DigitalCloud\AddressField\FieldServiceProvider" --tag=config
+```
+Don't forget:
+```shell
+php artisan config:cache
+```
+
 ## Usage
 
 ```php
