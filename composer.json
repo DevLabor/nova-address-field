@@ -1,5 +1,5 @@
 {
-    "name": "digitalcloud/nova-address-field",
+    "name": "devlabor/nova-address-field",
     "description": "A Laravel Nova Address field.",
     "keywords": [
         "laravel",
